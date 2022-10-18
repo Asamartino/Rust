@@ -6,4 +6,4 @@ Simple flappy bird game. It can be enhanced as suggested by the book (see [this 
 
 
 ## dungeoncrawl
-Roguelike dungeon game.
+Roguelike dungeon game (in progress)
