@@ -17,6 +17,7 @@ struct State {
     score: i32,
 }
 
+//comment
 impl State {
     fn new() -> Self {
         State {
