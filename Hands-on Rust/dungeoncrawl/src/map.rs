@@ -7,7 +7,7 @@ pub enum TileType {
     Floor,
 }
 
-
+//map_idx: returns the tile index in a row-first encoding
 pub fn map_idx(x: i32, y: i32) -> usize {
     ((y * SCREEN_WIDTH) + x) as usize
 }
