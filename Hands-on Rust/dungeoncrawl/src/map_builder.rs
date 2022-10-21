@@ -5,6 +5,7 @@ pub struct MapBuilder {
     pub map: Map,
     pub rooms: Vec<Rect>,
     pub player_start: Point,
+    pub amulet_start: Point,
 }
 
 impl MapBuilder {
@@ -13,11 +14,30 @@ impl MapBuilder {
             map: Map::new(),
             rooms: Vec::new(),
             player_start: Point::zero(),
+            amulet_start: Point::zero(),
         };
         mb.fill(TileType::Wall);
         mb.build_random_rooms(rng);
         mb.build_corridors(rng);
-        mb.player_start = mb.rooms[0].center(); 
+        mb.player_start = mb.rooms[0].center();
+        let dijkstra_map = DijkstraMap::new(
+            SCREEN_WIDTH,
+            SCREEN_HEIGHT,
+            &vec![mb.map.point2d_to_index(mb.player_start)],
+            &mb.map,
+            1024.0,
+        );
+        const UNREACHABLE: &f32 = &f32::MAX;
+        mb.amulet_start = mb.map.index_to_point2d(
+            dijkstra_map
+                .map
+                .iter()
+                .enumerate()
+                .filter(|(_, dist)| *dist < UNREACHABLE)
+                .max_by(|a, b| a.1.partial_cmp(b.1).unwrap())
+                .unwrap()
+                .0,
+        );
         mb
     }
 
@@ -33,7 +53,7 @@ impl MapBuilder {
                 rng.range(2, 10),
                 rng.range(2, 10),
             );
-            let mut overlap = false; 
+            let mut overlap = false;
             for r in self.rooms.iter() {
                 if r.intersect(&room) {
                     overlap = true;
@@ -72,10 +92,10 @@ impl MapBuilder {
 
     fn build_corridors(&mut self, rng: &mut RandomNumberGenerator) {
         let mut rooms = self.rooms.clone();
-        rooms.sort_by(|a, b| a.center().x.cmp(&b.center().x)); 
+        rooms.sort_by(|a, b| a.center().x.cmp(&b.center().x));
 
         for (i, room) in rooms.iter().enumerate().skip(1) {
-            let prev = rooms[i - 1].center(); 
+            let prev = rooms[i - 1].center();
             let new = room.center();
 
             if rng.range(0, 2) == 1 {

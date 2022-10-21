@@ -63,17 +63,5 @@ pub fn player_input(
             }
         }
         *turn_state = TurnState::PlayerTurn;
-
-        // players.iter(ecs).for_each(|(entity, pos)| {
-        //     let destination = *pos + delta;
-        //     commands.push((
-        //         (),
-        //         WantsToMove {
-        //             entity: *entity,
-        //             destination,
-        //         },
-        //     ));
-        // });
-        // *turn_state = TurnState::PlayerTurn;
     }
 }
