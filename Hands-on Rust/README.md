@@ -10,7 +10,7 @@ Simple flappy bird game. It can be enhanced as suggested by [@thebracket](https:
 Roguelike dungeon game. Explore this 3-level dungeon in the hope of finding the mythical *Amulet of Yala*. Beware of the monsters. 
 <br />
 <br />
-To help you in your quest, there are two power-ups (healing potion and dungeon map) disseminated around the dungeon as well as different types of swords. Once you find an item, stand on it with your character and use the "g" key on your keyboard to put it in your inventory. You can then use it at anytime by simple pressing its corresponding number.
+To help you in your quest, there are two main power-ups (healing potion and dungeon map) disseminated around the dungeon as well as different types of swords. Once you find an item, stand on it with your character and use the "g" key on your keyboard to put it in your inventory. You can then use it at anytime by simple pressing its corresponding number.
 <br />
 <br />
 You can also get more information by simply pointing at monsters or items with your mouse.<br />
