@@ -9,7 +9,7 @@ Created two games (look in the folder for more details) :
 - Flappy bird ASCII
 - Dungeon Crawler
 
-To play download the desired game. Open the folder on your terminal and launch the game with the command *cargo run*.
+To play desired game downlaod the folder and open it in your terminal. Launch the game with the command *cargo run*.
 
 ![image](https://user-images.githubusercontent.com/61462365/197562245-d9fe6306-2655-4d94-91f2-8a33afdf14e3.png)
 ![image](https://user-images.githubusercontent.com/61462365/197562996-bd2ff851-fe8e-466a-9133-2521c3c1cf3e.png)
