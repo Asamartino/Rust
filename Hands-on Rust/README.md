@@ -6,7 +6,9 @@ Simple flappy bird game. It can be enhanced as suggested by [@thebracket](https:
 
 
 ## Dungeon Crawl 
-Roguelike dungeon game. Explore the dungeon in the hope of finding the mythical Amulet of Yala. Beware of the monsters. To help you in your quest, there are two power-ups (healing potion and dungeon map) disseminated around the dungeon as well as different types of swords. Once you find one use the "g" key on your keyboard to put it in your inventory. You can then use it at anytime by simple pressing the number associated with it in your inventory.
+Roguelike dungeon game. Explore the dungeon in the hope of finding the mythical Amulet of Yala. Beware of the monsters. <br />
+<br />
+To help you in your quest, there are two power-ups (healing potion and dungeon map) disseminated around the dungeon as well as different types of swords. Once you find an item use the "g" key on your keyboard to put it in your inventory. You can then use it at anytime by simple pressing its associated number.
 
 ![image](https://user-images.githubusercontent.com/61462365/197328182-35c1ff37-3254-4900-b49a-b0429b8a694f.png)
 
