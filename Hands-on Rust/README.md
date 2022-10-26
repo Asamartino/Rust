@@ -13,7 +13,7 @@ Roguelike dungeon game. Explore this 3-level dungeon in the hope of finding the 
 To help you in your quest, there are two main power-ups (healing potion and dungeon map) disseminated around the dungeon as well as different types of swords. Once you find an item, stand on it with your character and use the "g" key on your keyboard to put it in your inventory. You can then use it at anytime by simple pressing its corresponding number.
 <br />
 <br />
-Move your character using the arrow keys from your keyboard. You can also get more information by simply pointing at monsters or items with your mouse.<br />
+Move your character by using the arrow keys from your keyboard. You can also get more information by simply pointing at monsters or items with your mouse.<br />
 Amulet of Yala: ![image](https://user-images.githubusercontent.com/61462365/197956831-42bde6e9-1a2a-430c-a70d-51252103c4a7.png) <br />
 healing potion: ![image](https://user-images.githubusercontent.com/61462365/197956313-b06e20ab-dc75-4da7-8cf4-a3b237f70c69.png) <br />
 dungeon map: ![image](https://user-images.githubusercontent.com/61462365/197956187-0a42da0b-33d1-4bb0-bd26-8a74c15bbea2.png) <br />
