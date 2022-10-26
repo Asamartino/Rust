@@ -6,8 +6,8 @@
 Following the tutorial from the book [Hands-on Rust](https://hands-on-rust.com/). The source code of the book can be found [here](https://github.com/thebracket/HandsOnRust). 
 
 Created two games (look in the folder for more details) :
-- Flappy bird ASCII
-- Dungeon Crawler
+- [Flappy bird ASCII](https://github.com/Asamartino/Rust/tree/main/Hands-on%20Rust/flappy_bird_ASCII)
+- [Dungeon Crawler](https://github.com/Asamartino/Rust/tree/main/Hands-on%20Rust/dungeon_crawl)
 
 To play the desired game downlaod the folder and open it in your terminal. Launch the game with the command *cargo run*.
 
