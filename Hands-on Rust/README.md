@@ -15,9 +15,9 @@ To help you in your quest, there are two main power-ups (healing potion and dung
 <br />
 Move your character by using the *arrow keys* from your keyboard. You can also get more information by simply pointing at monsters or items with your mouse.<br />
 Amulet of Yala: ![image](https://user-images.githubusercontent.com/61462365/197956831-42bde6e9-1a2a-430c-a70d-51252103c4a7.png) <br />
-healing potion: ![image](https://user-images.githubusercontent.com/61462365/197956313-b06e20ab-dc75-4da7-8cf4-a3b237f70c69.png) <br />
-dungeon map: ![image](https://user-images.githubusercontent.com/61462365/197956187-0a42da0b-33d1-4bb0-bd26-8a74c15bbea2.png) <br />
-swords (from worst to best): ![image](https://user-images.githubusercontent.com/61462365/197957520-a925f52a-1c48-43e6-86ca-bc34804ae155.png) <br />
+Healing potion: ![image](https://user-images.githubusercontent.com/61462365/197956313-b06e20ab-dc75-4da7-8cf4-a3b237f70c69.png) <br />
+Dungeon map: ![image](https://user-images.githubusercontent.com/61462365/197956187-0a42da0b-33d1-4bb0-bd26-8a74c15bbea2.png) <br />
+Swords (from worst to best): ![image](https://user-images.githubusercontent.com/61462365/197957520-a925f52a-1c48-43e6-86ca-bc34804ae155.png) <br />
 
 ![image](https://user-images.githubusercontent.com/61462365/199025267-7d63e657-c109-44a9-bc07-a4f2450e988c.png)
 
