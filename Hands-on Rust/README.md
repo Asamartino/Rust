@@ -19,8 +19,7 @@ healing potion: ![image](https://user-images.githubusercontent.com/61462365/1979
 dungeon map: ![image](https://user-images.githubusercontent.com/61462365/197956187-0a42da0b-33d1-4bb0-bd26-8a74c15bbea2.png) <br />
 swords (from worst to best): ![image](https://user-images.githubusercontent.com/61462365/197957520-a925f52a-1c48-43e6-86ca-bc34804ae155.png) <br />
 
-![image](https://user-images.githubusercontent.com/61462365/197328182-35c1ff37-3254-4900-b49a-b0429b8a694f.png)
+![image](https://user-images.githubusercontent.com/61462365/199025267-7d63e657-c109-44a9-bc07-a4f2450e988c.png)
 
-![image](https://user-images.githubusercontent.com/61462365/197328228-9bb0efa8-e998-49e3-9495-660130212b26.png)
+![image](https://user-images.githubusercontent.com/61462365/199026226-b0d991c7-e161-45e2-8103-1c22a4668a5c.png)
 
-![image](https://user-images.githubusercontent.com/61462365/197328363-5d91211b-46de-48e4-918c-834a41d03d7a.png)
