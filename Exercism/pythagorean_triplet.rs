@@ -26,7 +26,3 @@ pub fn find(sum: u32) -> HashSet<[u32; 3]> {
     }
     return pythagorean_triplet;
 }
-
-fn main() {
-    println!("the pythagorean triplet for 1000 is: {:?}", find(1000))
-}

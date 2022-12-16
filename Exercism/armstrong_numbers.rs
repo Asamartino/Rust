@@ -34,7 +34,7 @@ pub fn is_armstrong_number(num: u32) -> bool {
 
 fn main() {
     println!(
-        "is it a arsttrong number {:?}",
+        "is it a armstrong number {:?}",
         is_armstrong_number(4_106_098_957)
     )
 }
