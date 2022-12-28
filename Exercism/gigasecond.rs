@@ -1,3 +1,10 @@
+// Instructions
+// Given a moment, determine the moment that would be after a gigasecond has passed.
+
+// A gigasecond is 10^9 (1,000,000,000) seconds.
+
+// If you're unsure what operations you can perform on PrimitiveDateTime take a look at the time crate which is listed as a dependency in the Cargo.toml file for this exercise.
+
 use time::Duration;
 use time::PrimitiveDateTime as DateTime;
 
