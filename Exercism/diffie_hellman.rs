@@ -22,6 +22,3 @@ pub fn modular_exponentiation(base: u64, exponent: u64, modulo: u64) -> u64 {
     let modulo = BigUint::from(modulo);
     base.modpow(&exponent,&modulo).iter_u64_digits().collect::<Vec<u64>>()[0]
 }
-fn main() {
-    println!("Hello, world!");
-}
