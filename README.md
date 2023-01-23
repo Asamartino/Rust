@@ -2,6 +2,9 @@
 🦀 There is only one step and it is crab 🦀
 
 
+## Exercism
+Potential solutions to the Rust exercises found on [Exercism](https://exercism.org).
+
 ## Hands-on Rust
 Following the tutorial from the book [Hands-on Rust](https://hands-on-rust.com/). The source code of the book can be found [here](https://github.com/thebracket/HandsOnRust). 
 
