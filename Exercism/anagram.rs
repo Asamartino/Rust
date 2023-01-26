@@ -36,5 +36,6 @@ pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'
             response.insert(possible_anagrams[i]);
         }
     }
+    
     response
 }
