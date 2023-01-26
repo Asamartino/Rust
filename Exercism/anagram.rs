@@ -15,7 +15,6 @@
 // If sorting, consider sort_unstable which is typically faster than stable sorting. When applicable, unstable sorting is preferred because it is generally faster than stable sorting and
 // it doesn't allocate auxiliary memory.
 
-
 use std::collections::HashSet;
 
 fn to_lowercase_and_sort(word: &str) -> Vec<char> {
@@ -27,8 +26,10 @@ fn to_lowercase_and_sort(word: &str) -> Vec<char> {
 pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'a str> {
     let sorted_word = to_lowercase_and_sort(word);
     let mut response: HashSet<&str> = HashSet::new();
+
     for i in 0..possible_anagrams.len() {
         let sorted_possible_anagram = to_lowercase_and_sort(possible_anagrams[i]);
+
         if sorted_word == sorted_possible_anagram
             && word.to_lowercase() != possible_anagrams[i].to_lowercase()
         {
