@@ -19,11 +19,10 @@
 
 // Whether Tom is allergic to any one of those allergens listed above.
 // All the allergens Tom is allergic to.
-// Note: a given score may include allergens not listed above (i.e. allergens that score 256, 512, 1024, etc.). 
+// Note: a given score may include allergens not listed above (i.e. allergens that score 256, 512, 1024, etc.).
 // Your program should ignore those components of the score. For example, if the allergy score is 257, your program should only report the eggs (1) allergy.
 
-
-pub struct Allergies{
+pub struct Allergies {
     score: u8,
 }
 
@@ -33,7 +32,7 @@ pub enum Allergen {
     Peanuts = 2,
     Shellfish = 4,
     Strawberries = 8,
-    Tomatoes = 16, 
+    Tomatoes = 16,
     Chocolate = 32,
     Pollen = 64,
     Cats = 128,
@@ -42,12 +41,12 @@ pub enum Allergen {
 impl Allergies {
     pub fn new(score: u32) -> Self {
         // the score should be bound between 0 and 255 => u8
-        Self {score: score as u8}
+        Self { score: score as u8 }
     }
 
     pub fn is_allergic_to(&self, allergen: &Allergen) -> bool {
         // & is the bitwise operator. Notice that in binary 2 = 10, 4 = 100, 64 = 1000000, etc.
-        // Thus can immediately see if an allergen is in the list or not. 
+        // Thus can immediately see if an allergen is in the list or not.
         self.score & *allergen as u8 != 0
     }
 
@@ -57,12 +56,13 @@ impl Allergies {
             Allergen::Peanuts,
             Allergen::Shellfish,
             Allergen::Strawberries,
-            Allergen::Tomatoes, 
+            Allergen::Tomatoes,
             Allergen::Chocolate,
             Allergen::Pollen,
             Allergen::Cats,
-            ]
-        );
-        vec.into_iter().filter(|allergen| self.is_allergic_to(allergen)).collect()
+        ]);
+        vec.into_iter()
+            .filter(|allergen| self.is_allergic_to(allergen))
+            .collect()
     }
 }
