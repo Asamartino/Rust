@@ -37,9 +37,9 @@ pub fn is_valid(code: &str) -> bool {
     if code_wihtout_space.len() < 2 || !code_wihtout_space.chars().all(|c| c.is_numeric()) {
         return false;
     }
-    
+
     let mut sum = 0;
-    let code_ws_reversed = code_wihtout_space.chars().rev().collect::<String>(); // as you double every second digit, starting from the right -> easier to reverse the string
+    let code_ws_reversed = code_wihtout_space.chars().rev().collect::<String>(); // as you double every second digit starting from the right -> easier to reverse the string
     for (index, char) in code_ws_reversed.chars().enumerate() {
         let num = char as i32 - 0x30;
         if index % 2 != 0 {
