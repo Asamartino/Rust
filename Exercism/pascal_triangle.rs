@@ -39,6 +39,6 @@ impl PascalsTriangle {
 }
 
 fn main() {
-    let abc = PascalsTriangle::new(5);
-    println!("pascal_triangle {:?}", abc);
+    let pascal_triangle_5 = PascalsTriangle::new(5);
+    println!("pascal_triangle {:?}", pascal_triangle_5);
 }
