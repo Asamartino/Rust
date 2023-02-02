@@ -15,7 +15,7 @@ pub fn abbreviate(phrase: &str) -> String {
         if iter.chars().all(|c| c.is_uppercase()) || iter.chars().all(|c| c.is_lowercase()) {
             result.push(iter.chars().nth(0).unwrap().to_ascii_uppercase())
         } else {
-            // complication due to the test "HyperText" -> have to split the string
+            // complication due to the test "HyperText"
             let abc: String = iter.chars().filter(|c| c.is_uppercase()).collect();
             result.push_str(&abc);
         }
