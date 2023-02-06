@@ -18,11 +18,11 @@ pub fn check(candidate: &str) -> bool {
     let candidate = candidate.replace(&['-', ' '][..], "");
     let candidate = candidate.to_ascii_lowercase();
 
-    let mut char_value = HashMap::new();
+    let mut hashmap_char_value = HashMap::new();
 
     for (i, char) in candidate.chars().enumerate() {
-        if !char_value.contains_key(&char) {
-            char_value.insert(char, i);
+        if !hashmap_char_value.contains_key(&char) {
+            hashmap_char_value.insert(char, i);
         } else {
             return false;
         }
