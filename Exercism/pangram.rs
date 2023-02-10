@@ -10,8 +10,8 @@
 use std::collections::HashMap;
 
 pub fn is_pangram(sentence: &str) -> bool {
-    let sentence = sentence.to_ascii_lowercase();
-    let mut map: HashMap<char, u32> = ('a'..='z').map(|x| (x, 0)).collect();
+    let sentence = sentence.to_ascii_lowercase();  
+    let mut map: HashMap<char, u32> = ('a'..='z').map(|x| (x, 0)).collect();    // could aslo simply do ('a'..='z').all(|c| sentence.contains(c)) -> it's an overkill to use a hashmap 
 
     for char in sentence.chars(){
         if char >= 'a' || char <= 'z'{
