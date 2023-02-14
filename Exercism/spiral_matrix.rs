@@ -27,21 +27,21 @@ pub fn spiral_matrix(size: u32) -> Vec<Vec<u32>> {
         (0, size as usize - 1, 0, size as usize - 1);
 
     while row_start <= row_end && col_start <= col_end {
-        // Fill top row
+        // fill top row
         for j in col_start..=col_end {
             matrix[row_start][j] = count;
             count += 1;
         }
         row_start += 1;
 
-        // Fill right column
+        // fill right column
         for i in row_start..=row_end {
             matrix[i][col_end] = count;
             count += 1;
         }
         col_end -= 1;
 
-        // Fill in the bottom row
+        // fill bottom row
         if row_start <= row_end {
             for j in (col_start..=col_end).rev() {
                 matrix[row_end][j] = count;
@@ -50,7 +50,7 @@ pub fn spiral_matrix(size: u32) -> Vec<Vec<u32>> {
             row_end -= 1;
         }
 
-        // Fill in the left column
+        // fill left column
         if col_start <= col_end {
             for i in (row_start..=row_end).rev() {
                 matrix[i][col_start] = count;
