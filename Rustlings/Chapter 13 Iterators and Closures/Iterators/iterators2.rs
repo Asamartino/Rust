@@ -42,7 +42,7 @@ pub fn capitalize_words_string(words: &[&str]) -> String {
     // s
     // -> better solution
     // words.iter().map(|word| capitalize_first(word)).collect()
-    // -> even better as similar to capitlaize_word_vector()
+    // -> even better as similar to capitalize_words_vector()
     capitalize_words_vector(words).join("")
 }
 
