@@ -40,7 +40,7 @@ let absent_number: Option<i32> = None;
     ```
 - _if let_:  handle values that match 1 pattern while ignoring the rest. **Be careful of implicit coercion**
 ```rust
-let some_u8_value = Some(ou8);
+let some_u8_value = Some(0u8);
 match some_u8_value{
     Some(3) => println!("three"),
     _ => (),
