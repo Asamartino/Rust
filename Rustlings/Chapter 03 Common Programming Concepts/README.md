@@ -49,11 +49,11 @@ let second = a[1];
 
 **Functions**:
 - Rust doesn’t care where you define your function as long as it’s defined somewhere.
-- main(): lines execute in the order in which they appear
+- _main()_: lines execute in the order in which they appear
 
 **If expression**: 
 - bool as condition (no automatic conversion)
-- Multiple conditions with else if: 
+- Multiple conditions with _else if_: 
 	- only executes the block for the first true condition -> doesn’t even check the rest 
 ```rust
 let number = 6;
@@ -69,11 +69,11 @@ if number % 4 == 0 {
 }
 //output: number is divisible by 2
 ```
-- both arms if else must return the same type
+- both arms _if else_ must return the same type
 
 **Loop**:
-- _loop_: execute forever or until you stop it with break
-- _while_: concise combination of loop, if, else and break
+- _loop_: execute forever or until you stop it with _break_
+- _while_: concise combination of _loop_, _if_, _else_ and _break_
 - _for_: **used for safety and conciseness (most commonly used)**
 ```rust
 let a = [10, 20, 30, 40, 50];
@@ -81,7 +81,7 @@ for element in a.iter() {    // increased safety and ↘ bugs
     println!("the value is: {}", element);
 }
 
-for number in (1..4).rev() {  // instead of using while loop
+for number in (1..4).rev() {
     println!("{}!", number);
 }
     println!("LIFTOFF!!!");
