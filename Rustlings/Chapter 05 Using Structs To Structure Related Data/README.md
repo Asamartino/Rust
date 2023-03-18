@@ -11,7 +11,8 @@ struct User{
 ```
 - Entire instance must be mutable in order to change a field.
 - Syntactic sugar:
-    - Field init shorthand syntax: 
+    - _Field init shorthand syntax_: 
+    
     ```rust
       fn build_user(email: String, username: String) -> User{
           User{
@@ -21,6 +22,7 @@ struct User{
           }
       }
       ```
+
     - Struct update syntax: **..**
     ```rust
         let user2 = User{
@@ -57,7 +59,7 @@ impl Rectangle{
 let rect1 = Rectangle{width:30, height:50};
 let area_rect1 = rect1.area();
 ```
-**Associated functions**: don’t take self as parameter, often used for constructors. Use _::_ to call, e.g. _String::from_
+**Associated functions**: don’t take self as parameter, often used for constructors. Use :: to call, e.g. _String::from_
 ```rust
 impl Rectangle{
     fn square (size:u32) -> Rectangle{
