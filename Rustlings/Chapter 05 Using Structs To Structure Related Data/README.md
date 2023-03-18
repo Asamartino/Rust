@@ -1,6 +1,6 @@
 # Summary of chapter 5 
 **Struct**: custom type that holds multiple values (≈ object):
-```rust
+  ```rust
 struct User{
     username: String,// rather than &str ->instance owns its data! 
                      // + data is valid as long as entire struct is !
@@ -8,12 +8,11 @@ struct User{
     age: u64,
     active: bool,
 }
-```
+  ```
 - Entire instance must be mutable in order to change a field.
 - Syntactic sugar:
     - _Field init shorthand syntax_: 
-    
-    ```rust
+      ```rust
       fn build_user(email: String, username: String) -> User{
           User{
               email,
@@ -22,16 +21,15 @@ struct User{
           }
       }
       ```
-
-    - Struct update syntax: **..**
-    ```rust
+    - _Struct update syntax_:
+      ```rust
         let user2 = User{
             email: String::from("another@eample.com"),
             username: String::from("anotherusername567"),
             ..user1
         }
-     ```
-	No implementation of _Display_ -> _#[derive(Debug)]_ and use _{:#}_ with _println!_
+      ```
+- No implementation of _Display_ -> _#[derive(Debug)]_ and use _{:#}_ with _println!_
 
 **Tuple struct**: to give the whole tuple a name -> different type.
 ```rust
@@ -45,7 +43,7 @@ let origin = Point(0,0,0);
 struct MyUnitStruct;
 ```
 
-**Methods**: function defined within the context of a struct. **First parameter is always self**, Can take ownership of self, borrow self immutably or borrow self mutable just as they can with any other parameter.
+**Methods**: function defined within the context of a struct. **First parameter is always _self_**, Can take ownership of self, borrow self immutably or borrow self mutable just as they can with any other parameter.
 ```rust
 struct Rectangle{
     width: u32,    
@@ -59,7 +57,7 @@ impl Rectangle{
 let rect1 = Rectangle{width:30, height:50};
 let area_rect1 = rect1.area();
 ```
-**Associated functions**: don’t take self as parameter, often used for constructors. Use :: to call, e.g. _String::from_
+**Associated functions**: don’t take _self_ as parameter, often used for constructors. Use :: to call, e.g. _String::from_
 ```rust
 impl Rectangle{
     fn square (size:u32) -> Rectangle{
