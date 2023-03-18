@@ -72,7 +72,7 @@ if number % 4 == 0 {
 - both arms _if else_ must return the same type
 
 **Loop**:
-- _loop_: execute forever or until you stop it with _break_
+- _loop_: executed forever or until you stop it with _break_
 - _while_: concise combination of _loop_, _if_, _else_ and _break_
 - _for_: **used for safety and conciseness (most commonly used)**
 ```rust
