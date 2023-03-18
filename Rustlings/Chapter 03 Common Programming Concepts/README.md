@@ -35,7 +35,7 @@ let (x, y, z) = tup;  // destructing
 let x = tup.0         //using its index
 ```
 
-- Array: fixed length  (can’t grow or shrink once declared) + all variables must have same type. Data allocated on the stack rather than the heap.
+- Array: fixed length  (can’t grow or shrink once declared) + all variables must have same type. Data allocated on the stack.
 ```rust
 let a = [1,2,3,4,5];
 
