@@ -14,9 +14,10 @@ String: (stored on the heap) made up of three parts: a pointer, a length, and a 
 let s2 = s1;
 ```
 -	for **stack data**:
-   -	copy the data
+-	copy the data
 -	for **heap data**:
-   - **move** the data: rust invalidates the first variable -> prevent _double free error_ (to create a deep copy use _.clone()_).
+-	**move** the data: rust invalidates the first variable -> prevent _double free error_ (to create a deep copy use _.clone()_).
+
 ![image](https://user-images.githubusercontent.com/61462365/226119790-32d17f3a-71e9-420c-9ef5-737e557cc0ed.png)
 
 
