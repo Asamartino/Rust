@@ -8,7 +8,7 @@ enum IpAddrKind {
 let four = IpAddrKind::V4;
 ```
 
-**Rust does not have nulls**, -> Option<T>: encodes the concept of value being present or absent:
+**Rust does not have nulls** -> _Option\<T\>_: encodes the concept of value being present or absent:
 ```rust
 enum Option<T>{
     Some(T),
@@ -31,7 +31,7 @@ let absent_number: Option<i32> = None;
     }
     ```
 - Underscore:
-    - _ _ pattern_ will match any value. By putting after other arms _ will match all possible cases that aren’t specified before it. 
+    - _ _pattern_ will match any value. By putting after other arms _ will match all possible cases that aren’t specified before it. 
     - _s ignoring an unused variable.
     ```rust
     fn add_numbers(f: i32, _s: i32) -> i32 {
@@ -50,5 +50,5 @@ if let Some(3) =  some_u8_value {
     println!("three");
 }
 ```
--> trade-off as, loose exhaustive checking that match enforces. Can also include an else
+-> trade-off as, loose exhaustive checking that _match_ enforces. Can also include an _else_
 
