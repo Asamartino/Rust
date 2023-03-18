@@ -19,4 +19,4 @@ Launch the game with the command *cargo run*.
 ![image](https://user-images.githubusercontent.com/61462365/197562996-bd2ff851-fe8e-466a-9133-2521c3c1cf3e.png)
 
 ## Rustlings
-Potential solutions to the Rust exercises found on [Rustlings](https://github.com/rust-lang/rustlings).
+Potential solutions to the Rust exercises found on [Rustlings](https://github.com/rust-lang/rustlings). Also, includes a succinct summary of each chapter from [The Rust Programming Language](https://doc.rust-lang.org/book/).
