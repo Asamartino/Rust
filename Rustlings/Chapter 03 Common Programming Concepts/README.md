@@ -27,7 +27,7 @@ let spaces = spaces.len();
 **Char**: specified with single quote (string uses double quote). Represents Unicode Scalar Value -> more than just ASCII (emoji, hiragana, etc..).
 
 **Compound type**: to group multiple values into one type.
-- Tuple: general way of grouping together different values:
+- Tuple: general way of grouping together different values into one compound type:
 ```rust
 let tup: (i32,f64,u8) = (500,6.4,1);
 
