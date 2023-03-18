@@ -84,6 +84,6 @@ for element in a.iter() {    // increased safety and ↘ bugs
 for number in (1..4).rev() {
     println!("{}!", number);
 }
-    println!("LIFTOFF!!!");
+println!("LIFTOFF!!!");
  ```
 
