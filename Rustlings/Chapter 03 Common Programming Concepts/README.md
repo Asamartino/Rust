@@ -24,7 +24,7 @@ let x = x + 1;
 let spaces = "   ";
 let spaces = spaces.len();
 ```
-**Char**: specified with single quote (string uses double quote). Represents Unicode Scalar Value -> more than just ASCII (emojis, hiragana, etc..).
+**Char**: specified with single quote (string uses double quote). Represents Unicode Scalar Value -> more than just ASCII (emoji, hiragana, etc..).
 
 **Compound type**: to group multiple values into one type.
 - Tuple: general way of grouping together different values:
