@@ -50,7 +50,7 @@ if let Some(3) =  some_u8_value {
     println!("three");
 }
 ``` 
--> trade-off: loose exhaustive checking. \n 
+-> trade-off: loose exhaustive checking. \
 Can also include an _else_
 ```rust
 let mut count = 0;
