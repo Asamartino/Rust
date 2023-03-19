@@ -51,7 +51,7 @@ let absent_number: Option<i32> = None;
     }
     ```
 
-    - -> trade-off: loose exhaustive checking.
+    - trade-off: loose exhaustive checking.
     - can also include an _else_
     ```rust
       let mut count = 0;
