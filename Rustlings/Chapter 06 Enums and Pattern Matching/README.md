@@ -15,10 +15,10 @@ enum Option<T>{
     None,
 }
 ```
-If use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
-```rust
-let absent_number: Option<i32> = None;
-```
+- if use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
+    ```rust
+    let absent_number: Option<i32> = None;
+    ```
 
 **_match_**: **exhaustive control flow operator** that compares a value against a series of patterns and then executes code based on the **1st pattern the value “fits”**.
 - Match guard: extra condition on a match arm that further refines the arm’s pattern:
