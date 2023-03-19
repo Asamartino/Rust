@@ -39,25 +39,27 @@ let absent_number: Option<i32> = None;
     }
     ```
 - _if let_:  handle values that match 1 pattern while ignoring the rest. **Be careful of implicit coercion**
-```rust
-let some_u8_value = Some(0u8);
-match some_u8_value{
-    Some(3) => println!("three"),
-    _ => (),
-}
-// is equivalent to
-if let Some(3) =  some_u8_value {
-    println!("three");
-}
-``` 
--> trade-off: loose exhaustive checking. \
-Can also include an _else_
-```rust
-let mut count = 0;
-if let Coin::Quarter(state) = coin {
-    println!("State quarter from {:?}", state);
-} else {
-    count += 1;
-}
-```
+    ```rust
+    let some_u8_value = Some(0u8);
+    match some_u8_value{
+        Some(3) => println!("three"),
+        _ => (),
+    }
+    // is equivalent to
+    if let Some(3) =  some_u8_value {
+        println!("three");
+    }
+    ```
+
+    - -> trade-off: loose exhaustive checking.
+    - can also include an _else_
+    ```rust
+      let mut count = 0;
+      if let Coin::Quarter(state) = coin {
+          println!("State quarter from {:?}", state);
+      } else {
+          count += 1;
+      }
+    ```
+
 
