@@ -32,7 +32,7 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
       
       let s = format!("{}-{}-{}", s1,s2,s3); //returns a String and doesn’t take ownership of any of its parametes
       ```
-    - **Doesn’t support indexing** as some characters > 1 byte. Can look at it as: **bytes** s.bytes(), **scalars** (s.chars()) or **grapheme cluster** (≅ letters)
+    - **Doesn’t support indexing** as some characters > 1 byte. Can look at it as: **bytes** _s.bytes()_, **scalars** _s.chars()_ or **grapheme cluster** (≅ letters)
 
 - Hash map: to look up data by using a key. 
     - Need to be imported it via: ```use std::collections::HashMap;```
