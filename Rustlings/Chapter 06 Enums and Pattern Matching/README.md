@@ -15,10 +15,10 @@ enum Option<T>{
     None,
 }
 ```
-If use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
-```rust
-let absent_number: Option<i32> = None;
-```
+- if use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
+    ```rust
+    let absent_number: Option<i32> = None;
+    ```
 
 **_match_**: **exhaustive control flow operator** that compares a value against a series of patterns and then executes code based on the **1st pattern the value “fits”**.
 - Match guard: extra condition on a match arm that further refines the arm’s pattern:
@@ -39,16 +39,27 @@ let absent_number: Option<i32> = None;
     }
     ```
 - _if let_:  handle values that match 1 pattern while ignoring the rest. **Be careful of implicit coercion**
-```rust
-let some_u8_value = Some(ou8);
-match some_u8_value{
-    Some(3) => println!("three"),
-    _ => (),
-}
-// is equivalent to
-if let Some(3) =  some_u8_value {
-    println!("three");
-}
-```
--> trade-off as, loose exhaustive checking that _match_ enforces. Can also include an _else_
+    ```rust
+    let some_u8_value = Some(0u8);
+    match some_u8_value{
+        Some(3) => println!("three"),
+        _ => (),
+    }
+    // is equivalent to
+    if let Some(3) =  some_u8_value {
+        println!("three");
+    }
+    ```
+
+    - trade-off: loose exhaustive checking.
+    - can also include an _else_
+    ```rust
+      let mut count = 0;
+      if let Coin::Quarter(state) = coin {
+          println!("State quarter from {:?}", state);
+      } else {
+          count += 1;
+      }
+    ```
+
 
