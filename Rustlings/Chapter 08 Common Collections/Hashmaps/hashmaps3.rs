@@ -25,6 +25,16 @@ struct Team {
     goals_conceded: u8,
 }
 
+fn add_or_update(hm: &mut HashMap<String, Team>, team_name: String, goals_scored: u8, goals_conceded: u8){
+        if hm.contains_key(&team_name){
+            hm.get_mut(&team_name).unwrap().goals_scored += goals_scored;
+            hm.get_mut(&team_name).unwrap().goals_conceded += goals_conceded;
+        }else{
+            hm.insert(team_name.clone(), Team{name: team_name.clone(), goals_scored, goals_conceded});
+        }
+}
+
+
 fn build_scores_table(results: String) -> HashMap<String, Team> {
     // The name of the team is the key and its associated struct is the value.
     let mut scores: HashMap<String, Team> = HashMap::new();
@@ -40,22 +50,9 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // will be the number of goals conceded from team_2, and similarly
         // goals scored by team_2 will be the number of goals conceded by
         // team_1.
-        // scores.entry(&team_1_name).or_insert(Team{name: team_1_name, goals_scored: team_1_score, goals_conceded: team_2_score})
-        // scores.entry(&team_2_name).or_insert(Team{name: team_2_name, goals_scored: team_2_score, goals_conceded: team_1_score})
-        if scores.contains_key(&team_1_name){
-             scores.get_mut(&team_1_name).unwrap().goals_scored += team_1_score;
-             scores.get_mut(&team_1_name).unwrap().goals_conceded += team_2_score;
-         }else{
-             scores.insert(team_1_name.clone(), Team{name: team_1_name.clone(), goals_scored: team_1_score, goals_conceded: team_2_score});
-         }
+        add_or_update(&mut scores, team_1_name, team_1_score, team_2_score);
+        add_or_update(&mut scores, team_2_name, team_2_score, team_1_score);
 
-        if scores.contains_key(&team_2_name){
-            scores.get_mut(&team_2_name).unwrap().goals_scored += team_2_score;
-            scores.get_mut(&team_2_name).unwrap().goals_conceded += team_1_score;
-
-        }else{
-            scores.insert(team_2_name.clone(), Team{name: team_2_name.clone(), goals_scored: team_2_score, goals_conceded: team_1_score});
-        }
         
     }
     scores
