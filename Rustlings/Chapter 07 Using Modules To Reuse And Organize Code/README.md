@@ -10,7 +10,7 @@
 -	**If public**, can be accessed through any of its parent modules.
 -	**If private**, can be accessed only by its immediate parent module and any of the parent’s child modules.
 
-**use**: to avoid using the full path every time. Can also be used with enum:
+**use**: to avoid using the full path every time. Can also provide new names with **as** + can also be used with enum:
 ```rust
 use a::series::of;
 
