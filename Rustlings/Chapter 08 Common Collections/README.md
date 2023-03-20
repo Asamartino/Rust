@@ -35,11 +35,13 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
     - **Doesn’t support indexing** as some characters > 1 byte. Can look at it as: **bytes** s.bytes(), **scalars** (s.chars()) or **grapheme cluster** (≅ letters)
 
 - Hash map: to look up data by using a key. 
-    - Need to be imported it via: ``use std::collections::HashMap;```
+    - Need to be imported it via: ```use std::collections::HashMap;```
     - Keys can be of any type, but all must have the same type (same for values). 
-    - **For values that implement the Copy trait, values are copied for owned values, values will be moved and the hashmap will be the owner**.
+    - **For values that:**
+        - **implement the Copy trait: values are copied**
+        - **for owned values: values will be moved and the hashmap will be the owner**.
     - Different ways to iterate over them (see library):
-    - Any type that implements _Eq_ and _Hash_ traits can be a key in HashMap -> can have a hashmap of struct by adding on top of the struct: ```#[derive(Hash)]```
+    - Any type that implements _Eq_ and _Hash_ traits can be a key in HashMap -> can have a hashmap of struct by adding on top of the struct: ``` #[derive(Hash)] ```
     - Different way of updating a hashmap -> pg 145
     - HashMap uses a specific hashing algorithm, very competitive for medium sized keys, but for small keys or large keys might be outperformed by others hashing algorithms.
       ```rust
