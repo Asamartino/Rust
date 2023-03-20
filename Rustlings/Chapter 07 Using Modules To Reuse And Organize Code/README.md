@@ -1,54 +1,38 @@
 # Summary of chapter 7
-**Enum**: use when you can enumerate all possible value. Each variant can have different types and amounts of associated data. Can also define methods on enum.
-```rust
-enum IpAddrKind {
-      V4(u8,u8,u8),
-      V6(String)
-}
-let four = IpAddrKind::V4;
-```
+Module: namespace that contains definitions of functions or types which can be visible outside their module (public) or not (private by default): mod: declares a new module 
 
-**Rust does not have nulls** -> _Option\<T\>_: encodes the concept of value being present or absent:
-```rust
-enum Option<T>{
-    Some(T),
-    None,
-}
-```
-If use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
-```rust
-let absent_number: Option<i32> = None;
-```
+rule of modules filesystems:
+-	If a module named foo:
+o	has no submodules  put the declaration for foo in a file named foo.rs.
+o	have submodules     put the declaration for foo in a file named foo/mod.rs.
 
-**_match_**: **exhaustive control flow operator** that compares a value against a series of patterns and then executes code based on the **1st pattern the value “fits”**.
-- Match guard: extra condition on a match arm that further refines the arm’s pattern:
-    ```rust
-    match value {
-        Some(x) if x > 5 => println!("Value is greater than 5"),
-        Some(x) if x < 0 => println!("Value is negative"),
-        Some(x) => println!("Value is {}", x),
-        None => println!("No value"),
-    }
-    ```
-- Underscore:
-    - _ _pattern_ will match any value. By putting after other arms _ will match all possible cases that aren’t specified before it. 
-    - _s ignoring an unused variable.
-    ```rust
-    fn add_numbers(f: i32, _s: i32) -> i32 {
-        f + 1
-    }
-    ```
-- _if let_:  handle values that match 1 pattern while ignoring the rest. **Be careful of implicit coercion**
-```rust
-let some_u8_value = Some(ou8);
-match some_u8_value{
-    Some(3) => println!("three"),
-    _ => (),
-}
-// is equivalent to
-if let Some(3) =  some_u8_value {
-    println!("three");
-}
-```
--> trade-off as, loose exhaustive checking that _match_ enforces. Can also include an _else_
+rule of visibility: 
+-	If public, can be accessed through any of its parent modules.
+-	If private, can be accessed only by its immediate parent module and any of the parent’s child modules.
 
+use : to avoid using the full path every time. Can also be used with enum:
+use a::series::of;
+
+fn main(){
+    of::nested_modules;
+}
+///////////////////////////////////////////////////////////////////////
+enum TafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+use TrafficLight::{Red,Yellow}; // to bring everything at once use                
+                                   TrafficLight::*
+fn main(){
+   let red = Red;
+   let green = TrafficLight::green;
+}
+
+* = glob operator: bring all visible items into scope at once, convenient but might also pull more items than you expect  naming conflicts.
+
+Paths are always relative to the current module except with use where it’s relative to the crate root by default.
+
+Suppose you are in test and want to access the connect() in client  1 up in the module hierarchy:
+o	::client::connect() start at the root of the module
+o	super::client:.connect() go only 1 up  can be combined with use
