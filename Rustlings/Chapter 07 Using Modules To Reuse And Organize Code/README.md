@@ -36,7 +36,7 @@ fn main(){
 
 Suppose you are in test and want to access _connect()_ in client0 -> 1 up in the module hierarchy:
 - _::client::connect()_ start at the root of the module
-- _super::client:.connect()_ go only 1 up and can be combined with use
+- _super::client:.connect()_ go only 1 up and can be combined with _use_
 
 ![image](https://user-images.githubusercontent.com/61462365/226268113-1383f420-15ed-4207-8bad-431296ae3cee.png)
 
