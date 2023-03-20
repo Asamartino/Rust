@@ -32,7 +32,7 @@ fn main(){
 
 **\* = glob operator**: bring all visible items into scope at once. Convenient but might also pull more items than you expect -> naming conflicts.
 
-**Paths are always relative to the current module** except with use where it’s relative to the crate root by default.
+**Paths are always relative to the current module** except with _use_ where it’s relative to the crate root by default.
 
 Suppose you are in test and want to access _connect()_ in client0 -> 1 up in the module hierarchy:
 - _::client::connect()_ start at the root of the module
