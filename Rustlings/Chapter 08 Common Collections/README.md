@@ -22,7 +22,7 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
     - If _vec.len()_ > _vec.capacity()_  -> capacity will automatically ↗, but elements will be reallocated -> slow -> _use Vec::with_capacity_ whenever possible to specify how big the vector is expected to get.
     - **Can only store values of the same type**. **Work around**: define an enum with different value types and store them it into a vector (pg. 134)
 
-- String (wrapper over a _Vec\<u8\>_)
+- _String_ (wrapper over a _Vec\<u8\>_)
     - ``` “abc”.to_string() = String::from(“abc”)```
     - Adding:
       ```rust
@@ -34,7 +34,7 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
       ```
     - **Doesn’t support indexing** as some characters > 1 byte. Can look at it as: **bytes** _s.bytes()_, **scalars** _s.chars()_ or **grapheme cluster** (≅ letters)
 
-- Hash map: to look up data by using a key. 
+- _Hash map_: to look up data by using a key. 
     - Need to be imported it via: ```use std::collections::HashMap;```
     - Keys can be of any type, but all must have the same type (same for values). 
     - **For values that:**
