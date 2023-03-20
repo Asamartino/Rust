@@ -1,54 +1,45 @@
 # Summary of chapter 7
-**Enum**: use when you can enumerate all possible value. Each variant can have different types and amounts of associated data. Can also define methods on enum.
+**Module**: namespace that contains definitions of functions or types which can be visible outside their module (public) or not (private by default): mod: declares a new module 
+
+**rule of modules filesystems**:
+-	If a module named foo:
+    - has no submodules -> put the declaration for foo in a file named foo.rs.
+    - have submodules    -> put the declaration for foo in a file named foo/mod.rs.
+
+**rule of visibility**: 
+-	**If public**, can be accessed through any of its parent modules.
+-	**If private**, can be accessed only by its immediate parent module and any of the parent’s child modules.
+
+**use**: to avoid using the full path every time. Can also be used with enum:
 ```rust
-enum IpAddrKind {
-      V4(u8,u8,u8),
-      V6(String)
+use a::series::of;
+
+fn main(){
+    of::nested_modules;
 }
-let four = IpAddrKind::V4;
+///////////////////////////////////////////////////////////////////////
+enum TafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+use TrafficLight::{Red,Yellow}; // to bring everything at once use TrafficLight::*
+fn main(){
+   let red = Red;
+   let green = TrafficLight::green;
+}
 ```
 
-**Rust does not have nulls** -> _Option\<T\>_: encodes the concept of value being present or absent:
-```rust
-enum Option<T>{
-    Some(T),
-    None,
-}
-```
-If use _None_ rather than _Some_ -> need to specify the type as compiler can’t infer it:
-```rust
-let absent_number: Option<i32> = None;
-```
+**\* = glob operator**: bring all visible items into scope at once. Convenient but might also pull more items than you expect -> naming conflicts.
 
-**_match_**: **exhaustive control flow operator** that compares a value against a series of patterns and then executes code based on the **1st pattern the value “fits”**.
-- Match guard: extra condition on a match arm that further refines the arm’s pattern:
-    ```rust
-    match value {
-        Some(x) if x > 5 => println!("Value is greater than 5"),
-        Some(x) if x < 0 => println!("Value is negative"),
-        Some(x) => println!("Value is {}", x),
-        None => println!("No value"),
-    }
-    ```
-- Underscore:
-    - _ _pattern_ will match any value. By putting after other arms _ will match all possible cases that aren’t specified before it. 
-    - _s ignoring an unused variable.
-    ```rust
-    fn add_numbers(f: i32, _s: i32) -> i32 {
-        f + 1
-    }
-    ```
-- _if let_:  handle values that match 1 pattern while ignoring the rest. **Be careful of implicit coercion**
-```rust
-let some_u8_value = Some(ou8);
-match some_u8_value{
-    Some(3) => println!("three"),
-    _ => (),
-}
-// is equivalent to
-if let Some(3) =  some_u8_value {
-    println!("three");
-}
-```
--> trade-off as, loose exhaustive checking that _match_ enforces. Can also include an _else_
+**Paths are always relative to the current module** except with _use_ where it’s relative to the crate root by default.
+
+Suppose you are in test and want to access _connect()_ in client0 -> 1 up in the module hierarchy:
+
+![image](https://user-images.githubusercontent.com/61462365/226268113-1383f420-15ed-4207-8bad-431296ae3cee.png)
+
+Could do:
+- _::client::connect()_ start at the root of the module
+- _super::client:.connect()_ go only 1 up and can be combined with _use_
+
 
