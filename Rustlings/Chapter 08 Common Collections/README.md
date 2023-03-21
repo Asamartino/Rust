@@ -4,7 +4,7 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
     - ``` vec!(..) = vec![..] ```
     - To access an element:
       ```rust
-      let v = vec[1,2,3,4,5];
+      let v = vec![1,2,3,4,5];
       let third: &i32 = &v[100];             // programs crash
       let third: Option<&i32> = v.get(100);  // returns None
       ```
