@@ -1,26 +1,23 @@
-# Summary of chapter 8
-Collections (contains multiple values)  = **pointers with data stored on the heap** (≠ array or tuple) -> amount of data does not need to be known at compile time -> can grow or shrink as program run. Can be extended using _extend()_:
-- _Vec\<T\>_
-    - ``` vec!(..) = vec![..] ```
-    - To access an element:
-      ```rust
-      let v = vec[1,2,3,4,5];
-      let third: &i32 = &v[100];             // programs crash
-      let third: Option<&i32> = v.get(100);  // returns None
-      ```
-    - To iterate:
-      ```rust
-        for i in &v{
-            println!("{}", i);
-        }
-        for i in &mut v{
-            *i += 50;     // * = dereference operator
-        }
-      ```
-    - **capacity:** total number of elements it can hold without reallocating. 
-    - **length**: actual number of elements.
-    - If _vec.len()_ > _vec.capacity()_  -> capacity will automatically ↗, but elements will be reallocated -> slow -> _use Vec::with_capacity_ whenever possible to specify how big the vector is expected to get.
-    - **Can only store values of the same type**. **Work around**: define an enum with different value types and store them it into a vector (pg. 134)
+# Summary of chapter 13
+Closures: anonymous functions that you can save in a variable or pass as arguments to other functions. Unlike functions, can capture their environment and access variables from the scope in which they’re defined. 
+let expensive_closure = |num| {
+    println!("claculating slowly...");
+    thread::sleep(Duration::from_secs(2));
+    num
+}
+// expensive_closure contains the definition of an anonymous function // not its resulting value
+// to call: expensive_closure(10)
+
+	Don’t require you to annotate the types of the parameters or the return value like functions do (can add type annotations ↗ explicitness and clarity).  type will be inferred  can’t use different types (f.i. can’t call using an u32 as input and another time a String)  generic
+fn add_one_v1    (x:u32) -> u32 {x+1}; // function
+let add_one_v2 = |x:u32| -> u32 {x+1}; // closure
+let add_one_v3 = |x|            {x+1}; // closure
+let add_one_v4 = |x|             x+1 ; // closure
+	Capture values from their environment in three ways: FnOnce, FnMut, Fn
+	move: to take ownership of the values it uses
+let equal_to_x = move |z| z==x;
+
+
 
 - _String_ (wrapper over a _Vec\<u8\>_)
     - ``` “abc”.to_string() = String::from(“abc”)```
