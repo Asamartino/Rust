@@ -5,7 +5,7 @@ Rust errors:
         - if _Ok_ variant: return the value inside _Ok_
         - if _Err_ variant: _panic!_
     - _expect()_: = _unwrap_ + let you choose the _panic!_ error message -> convey your intent and easier to find.
-    - _unwrap_ and _expect_ are very handy when prototyping, before you’re ready to decide how to handle errors, **leave clear robust markers in your code for when you’re ready to make your program more robust.**
+    - _unwrap()_ and _expect()_ are very handy when prototyping, before you’re ready to decide how to handle errors, **leave clear robust markers in your code for when you’re ready to make your program more robust.**
 - Unrecoverable: (≈ bugs) use _panic!_ -> stop, print a failure message, unwind and clean up the stack, and then quit. Use _abort()_ if need to make the resulting binary as small as possible (ends program without cleaning up). \
 **Use _panic!_ when your code could end up in a bad state**: when some assumption, guarantee, contract, or invariant has been broken, such as when invalid values, contradictory values or missing values are passed to your code plus one or more of:
     - the bad state is not something that’s expected to happen occasionally
