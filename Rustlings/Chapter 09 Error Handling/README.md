@@ -1,6 +1,6 @@
 # Summary of chapter 9
 Rust errors:
-- Recoverable: report the problem to the user. For reason that you can easily interpret and respond to. **Returning Result<T,E>  is a good default choice when you’re defining a function that might fail**
+- Recoverable: report the problem to the user. For reason that you can easily interpret and respond to. **Returning _Result<T,E>_  is a good default choice when you’re defining a function that might fail**
     - _unwrap()_: when have some logic that ensures the Result will have an Ok value.
         - if _Ok_ variant: return the value inside _Ok_
         - if Err variant: panic!
