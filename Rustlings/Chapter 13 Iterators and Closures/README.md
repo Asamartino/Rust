@@ -24,6 +24,7 @@ let expensive_closure = |num| {
         ```
 \
 **Iterators**: allows you to perform some tasks on a sequence of items. 
+- Depending on the use case: _iter()_, _into_iter()_, _iter_mut()_.
 - Handles the logic of iterating over each item and determining when sequence has finished. 
 - **lazy**: no effect until call methods that consumes it.
 - **consuming adaptors**: methods that uses up the iterator (f.i. _next()_)
