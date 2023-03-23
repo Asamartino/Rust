@@ -67,3 +67,40 @@ fn largest<T> (list: &[T]) -> T {} // fn ...<T> indicates that it is a generic f
    ```
 - **Blanket implementation**: implementations of a trait on any type that satisfies the trait bounds
 
+**Lifetime**: scope for which a **reference** is valid (every reference in Rust has one).  Inferred most of the time -> but when multiple lifetimes (as with types) are possible need to annotate (prevent dangling references).
+The Rust compiler has a **borrow checker** that compares scopes to determine whether all borrows are valid.
+```rust
+{
+  let r;                // ---------+-- 'a
+  {                     //          |
+    let x = 5;          // -+-- 'b  |
+    r = &x;             //  |       |
+  }                     // -+       |
+  println!("r: {}", r); //          |
+}                       // ---------+
+```
+- **Lifetime rules** (used by the compiler): 
+    - Each parameter that is a reference gets its own lifetime parameter.
+    - If there is exactly **one input** lifetime parameter, that lifetime is a**ssigned to all output** lifetime parameters.
+    - If there are **multiple input lifetime parameters**, but one of them is _&self_ or _&mut self_ because this is a method, the lifetime of _self_ is assigned to all output lifetime parameters. 
+
+- **Lifetime annotations**: don’t change how long any of the references live -> borrow checker reject any values that don’t adhere to these constraints. It’s about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow memory-safe operations.
+  ```rust
+    fn longest <'a>(x: &'a str, y:&'a str) -> &'a str{
+      if x.len() > y.len(){
+          x
+      } else{
+          y
+      }
+  }
+  ```
+  As it’s possible for struct to hold references -> need to add a lifetime on every reference in the struct’s definition
+  ```rust
+  struct Book <'a>{
+      author: &'a str,
+      title: &'a str,
+  }
+  ```
+- **Lifetime elision rules**: set of particular cases that the compiler will consider, and if your code fits these cases, you don’t need to write the lifetimes explicitly.
+    - _'static_ : denotes the entire duration of the program (all string literals have it).
+
