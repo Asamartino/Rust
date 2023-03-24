@@ -28,3 +28,34 @@ _#[should_panic]_: pass if code inside the function panics and fails if doesn’
 
 _#[ignore]_: to exclude a test (f.i. if time consuming and want to ignore it during most runs).
 
+Test categories:
+- **Unit tests**: to test each unit of code in isolation from the rest of the code at a time and can test private interface.
+    - in the src directory, by convention in the same file as the function you want to test
+      ```rust
+      #[cfg(test)]  //cfg stands for configurations + tells rust to only run it with cargo test
+      mod tests {
+          use super::*;
+          #[test]
+          fn it_works() {
+              let result = add(2, 2);
+              assert_eq!(result, 4);
+          }
+      }
+      ```
+- **Integration tests**: external to your library and use your code in the same way any other external code would (using only the public interface and potentially exercising multiple modules per test) -> to test whether many parts of your library work together correctly.
+     - Need a _test_ directory (in same folder a _src_)
+       ```rust
+       extern crate adder; // as each test is a separate crate --> need to import our library in each of them
+       #[test]
+       fn it_adds_two() {
+           assert_eq!(4,adder::add_two(2));
+       }
+       ```
+     - Compiles all files when run _cargo test_
+     - _cargo test --test your_test_: to run only _test/your_test.rs_
+     - Only library crates expose functions that other crates can call and use\
+     -> if no _lib.rs_ can’t create an integration test
+
+**Both tests are important to ensure that pieces of your library are doing what you expect them to, separately and together.**
+
+
