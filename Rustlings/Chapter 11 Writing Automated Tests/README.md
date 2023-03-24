@@ -16,3 +16,15 @@ assert!(
     "Greeting did not containe name, value was '{}'", result
 )
 ```
+
+_#[should_panic]_: pass if code inside the function panics and fails if doesn’t -> imprecise as test can panic for a different reason.\
+-> _#[should_panic(expected = “substring”]_: will pass if the expected value is a substring of the _panic!_ message -> depend on how precise you want to be.
+
+**Tests run in parallel by default** -> make sure your tests don’t depend on each other or any shares state, including a shared environment:
+- _cargo test -- --test-threads=1_: to not use any parallelism (slower but won’t interfere with each other).
+- _cargo test –nocapture_: allow to see printed values for passing tests as well (normally will see only _println!_ if test fails)
+- _cargo test subtest_name_: if want to run a particular test. 
+    - To run multiple tests: specify part (substring) of a test name
+
+_#[ignore]_: to exclude a test (f.i. if time consuming and want to ignore it during most runs).
+
