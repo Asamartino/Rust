@@ -56,7 +56,7 @@ fn largest<T> (list: &[T]) -> T {} // fn ...<T> indicates that it is a generic f
     - Each type implementing the _summarize_ trait must provide its own custom behavior for it. 
     - Compiler will enforce that any type that has the Summary trait will have the method summarize defined with this signature.
 - **Restriction**: can implement a trait on a type only if either the trait or the type is local to our crate -> can’t implement external trait on external types (f.i. Display trait on _Vec\<T\>_) -> **orphan rule**: ensure that other people’s code can’t break your code and vice versa. 
-- **Trait bounds**: to constrain generic types to ensure the type will be limited to those that implement a particular trait and behavior.  Can specify multiple trait bounds on a generic type using “+” or with _where_.
+- **Trait bounds**: to constrain generic types to ensure the type will be limited to those that implement particular traits and behaviors.  Can specify multiple trait bounds on a generic type using “+” or _where_.
   ```rust
   fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) –> i32 {}
   // could also be written as
