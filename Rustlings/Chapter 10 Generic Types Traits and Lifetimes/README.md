@@ -67,6 +67,18 @@ fn largest<T> (list: &[T]) -> T {} // fn ...<T> indicates that it is a generic f
    ```
 - **Blanket implementation**: implementations of a trait on any type that satisfies the trait bounds
 
+- _impl_: can also be used as a shorthand for a concrete type that implements this trait. 
+  ```rust
+  fn summary(sum: &impl Summary) {
+          println!("Here is a summary: {}", &sum.summarize());
+  }
+  // primary use is working with closures
+  fn thing_returning_closure() -> impl Fn(i32) -> bool {
+      println!("here's a closure for you!");
+      |x: i32| x % 3 == 0
+  }
+  ```
+
 **Lifetime**: scope for which a **reference** is valid (every reference in Rust has one).  Inferred most of the time -> but when multiple lifetimes (as with types) are possible need to annotate (prevent dangling references).
 The Rust compiler has a **borrow checker** that compares scopes to determine whether all borrows are valid.
 ```rust
