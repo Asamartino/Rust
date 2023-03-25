@@ -78,6 +78,19 @@ fn largest<T> (list: &[T]) -> T {} // fn ...<T> indicates that it is a generic f
       |x: i32| x % 3 == 0
   }
   ```
+- **Super trait**: trait that is used as a requirement or constraint on another trait
+  ```rust
+  trait Person {
+      fn name(&self) -> String;
+  }
+  
+  // Person is a supertrait of Student.
+  // Implementing Student requires you to also impl Person.
+  trait Student: Person {
+      fn university(&self) -> String;
+  }
+  ```
+ 
 
 **Lifetime**: scope for which a **reference** is valid (every reference in Rust has one).  Inferred most of the time -> but when multiple lifetimes (as with types) are possible need to annotate (prevent dangling references).
 The Rust compiler has a **borrow checker** that compares scopes to determine whether all borrows are valid.
