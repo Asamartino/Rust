@@ -1,5 +1,5 @@
 # Summary of chapter 14
-Cargo have many features: see cargo doc. Two main profiles:
+Cargo have many features: see [cargo doc](https://doc.rust-lang.org/cargo/). Two main profiles:
 -	cargo build: dev profile, with good defaults for development.
 -	cargo build –release: release profile, good defaults for release builds.
 Can modify the default profile by adding either [profile.dev] or [profile.release]   in Cargo.toml
