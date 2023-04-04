@@ -83,4 +83,4 @@ Most common smart pointers in the standard library:
 - By having an _Rc\<T\>_ holding a _RefCell\<T\>_ -> can get a value that can have multiple owners and that you can mutate.
 
 
-**You can’t rely on Rust to prevent memory leak** -> if happens can try reorganizing your data structures so that some references express ownership and some references don’t (see example using weak reference pg. 335).**
+**You can’t rely on Rust to prevent memory leak** -> if happens can try reorganizing your data structures so that some references express ownership and some references don’t (see example using weak reference pg. 335).
