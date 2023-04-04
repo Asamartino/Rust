@@ -6,7 +6,7 @@
 *x = *(x.deref()) 
 ```
 - **Deref coercion**: converts a reference to a type that implements _Deref_ into a reference to a type that _Deref_ can convert the original type into. Happens automatically f.i.:
-    ```rusz
+    ```rust
     fn hello(name: &str) {
         println!("Hello, {name}!");
     }
@@ -65,11 +65,11 @@ Most common smart pointers in the standard library:
 - Use when want to allocate some data on the heap for multiple parts of your program to read and can’t determine at compile time which part will finish using the data last. **Only for single-threaded scenario**.
     ```rust
     use std::rc::Rc;
-
+ 
     fn main() {
-        let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
-        let b = Cons(3, Rc::clone(&a)); 
-        let c = Cons(4, Rc::clone(&a));
+    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));// Rc::strong_count(&a) = 1
+    let b = Cons(3, Rc::clone(&a)); // Rc::strong_count(&a) = 2
+    let c = Cons(4, Rc::clone(&a)); // Rc::strong_count(&a) = 3
     }
     ```
 - _Rc::clone_: doesn’t make a deep copy of all the data only ↗ _strong_count_ by 1 (doesn’t take much time). Rust automatically ↘ _strong_count_ by 1 when a value goes out of scope.
