@@ -73,7 +73,7 @@ Most common smart pointers in the standard library:
     }
     ```
 - _Rc::clone_: doesn’t make a deep copy of all the data only ↗ _strong_count_ by 1 (doesn’t take much time). Rust automatically ↘ _strong_count_ by 1 when a value goes out of scope.
-- _Rc::downgrade_: ↗ _weak_count_ by 1. _Weak_count_ does not need to be 0 for the _Rc\<T\>_ instance to be cleaned up. As the value might have been dropped -> check if value exist -> _upgrade_
+- _Rc::downgrade_: ↗ _weak_count_ by 1. _Weak_count_ does not need to be 0 for the _Rc\<T\>_ instance to be cleaned up. As the value might have been dropped -> check if value exist -> _upgrade_: returns an _Option\<Rc\<T\>\>_.
 
 **_RefCell\<T\>_**: enforces at runtime the rule of reference (see chapter 4). If you break these rules with _RefCell\<T\>_ -> your program will panic and exit (with reference and _Box\<T\>_ -> compilation error). Only for single-threaded scenarios. For mutable and immutable values.
 - Useful when you’re sure your code follows the borrowing rules, but the compiler is unable to understand and guarantee that. 
