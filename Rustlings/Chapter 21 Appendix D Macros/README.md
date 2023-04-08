@@ -1,5 +1,5 @@
 # Summary of Appendix D: Macros
-**Macros** evolve quickly -> the code you wrote might become outdated (although will still work thanks to Rust’s stability guarantees might be easier/better way to write macros). Useful resources:
+**Macros** evolve quickly -> the code you wrote might become outdated (although it will still work, thanks to Rust's stability guarantees). There might be an easier or better way to write macros. Useful resources:
 - [the reference](https://doc.rust-lang.org/reference/macros.html)
 - [the little book of rust macros](https://danielkeep.github.io/tlborm/book/index.html)
 
