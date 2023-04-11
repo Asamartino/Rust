@@ -67,7 +67,7 @@ if number % 4 == 0 {
 } else {
     println!("number is not divisible by 4, 3, or 2");
 }
-//output: number is divisible by 2
+//output: number is divisible by 3
 ```
 - both arms _if else_ must return the same type
 
