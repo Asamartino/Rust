@@ -124,5 +124,8 @@ Type of Macros:
     and_text!(the "lion" and the "witch" and the "wardrobe");
     ```
 
+7. Can use more than one metavariable in macro repetitions. "_However, in the transcriber, if multiple metavariables appear in the same repetition they must be bound to the same number of fragments_” see [the rust reference](https://doc.rust-lang.org/reference/macros-by-example.html#transcribing).
+8. Nested repetition: be sure to clearly refer the desried metavariable.
+9. [Transcribing](https://doc.rust-lang.org/reference/macros-by-example.html#transcribing): “_When a macro is invoked, the macro expander looks up macro invocations by name, and tries each macro rule in turn. It transcribes the first successful match; if this results in an error, then future matches are not tried. When matching, no lookahead is performed; if the compiler cannot unambiguously determine how to parse the macro invocation one token at a time, then it is an error_”.
 
 
