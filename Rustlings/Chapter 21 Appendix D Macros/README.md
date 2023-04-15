@@ -86,3 +86,43 @@ Type of Macros:
         do_thing!(print 3);
     }
     ```
+4. 	In general, every metavariable is of the form `$<name>:<fragspec>`:
+    - `<name>`: name of the metavariable, 
+	  
+    - `<fragspec>`: "Fragment Specifier", what sort of fragment you intend to match. 
+	      - `literal`: 'a', 3, "hello"
+	      - `expr`: for expression
+	      - `stmt`: ≈ `expr` but allow Rust statements too (f.i. `let`)
+	 
+  	**Follow-set Ambiguity Rules**: which tokens are allowed to follow a metavariable:
+	   - For `literal`: anything can follow it.
+	   - For `expr` and `stmt`: can only be followed by  `=>`  or `,` or `;`
+
+5. Other fragment specifiers (look [here](https://doc.rust-lang.org/reference/macros-by-example.html#metavariables) for more):
+    - `ident`: identifier, like a variable name, can be followed by anything.
+    - `block`: block expression (curly braces, and their contents), can be followed by anything.
+    - `ty`: a type, can only be followed by: `=>` `,` `=` `|` `;` `:` `>` `>>` `[` `{` `as` `where` or a block metavariable.
+6. Macro repetitions: to match and manipulate repeated patterns. Consists of:
+    - A group of tokens that we want to match repeatedly.
+    - Optionally, a separator token (which tells the parser what to look for between each match).
+    - Either `+`, `*` or `?`, which says how many times to expect a match. 
+      - `+`: at least once. 
+      - `*`: any number of times, including 0 times
+      - `?`: either 0 or 1 time
+    ```rust
+    #[macro_export]
+    macro_rules! and_text {
+    $(the $my_literal:literal)and+ => { // and is a separator could also use , it’s optional
+            {
+                let mut my_vec = Vec::new();
+                $(my_vec.push($my_literal);)*
+                my_vec
+            }
+        }
+    }
+    ...
+    and_text!(the "lion" and the "witch" and the "wardrobe");
+    ```
+
+
+
