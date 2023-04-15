@@ -68,7 +68,7 @@ Type of Macros:
 
 ## Summary of [MacroKata](https://github.com/tfpk/macrokata)
 
-In addition of the very good exercises, here is a short summary of the most important concepts:
+In addition of the [very good exercises](https://github.com/tfpk/macrokata/tree/main/exercises), here is a short summary of the most important concepts:
 
 1. 	**Rust's macros allow you to break many of the syntax rules**. For example, Rust does not allow functions with Δ# of arguments (also known as *variadic function*) -> can’t use _println_ -> use it as a macro. Before _println!_ is compiled, Rust rewrites it into a function which takes a single array of arguments.
     ```rust
