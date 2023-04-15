@@ -66,3 +66,23 @@ Type of Macros:
   }
   ```
 
+## Summary of [MacroKata](https://github.com/tfpk/macrokata)
+1. 	**Rust's macros allow you to break many of the syntax rules**. For example, Rust does not allow functions with Δ# of arguments (also known as *variadic function*) -> can’t use _println_ -> use it as a macro. Before _println!_ is compiled, Rust rewrites it into a function which takes a single array of arguments.
+    ```rust
+    // to run a macro
+    macro_name!(...) or macro_name!{...} or macro_name![...]
+    ```
+2. Macros are very similar to a _match_ statement because they find the first match and take action based on that; but you're matching on **tokens**.
+![image](https://user-images.githubusercontent.com/61462365/232204734-3de7794b-9144-4533-97e1-9b6accdbe08c.png)
+3. **Metavariables**: capture a particular part of the text inside the macro's brackets, and let you reuse it.
+    ```rust
+    macro_rules! do_thing {
+        (print $metavar:literal) => {
+            println!("{}", $metavar)
+        };
+    }
+
+    fn main() {
+        do_thing!(print 3);
+    }
+    ```
