@@ -1,5 +1,5 @@
 # Summary of chapter 15
-**Smart pointers**: data structures that act like a pointer but also have additional metadata and capabilities (f.i. _String_ and _Vec\<T\>_). In many cases, they own the data they point to. **They all implement de _Deref_ and _Drop_ traits**.
+**Smart pointers**: data structures that act like a pointer but also have additional metadata and capabilities (f.i. _String_ and _Vec\<T\>_). In many cases, they own the data they point to. **They all implement the _Deref_ and _Drop_ traits**.
 
 **Deref trait**: allows you to customize the behavior of the dereference operator *. Behind the scene: 
 ```rust 
