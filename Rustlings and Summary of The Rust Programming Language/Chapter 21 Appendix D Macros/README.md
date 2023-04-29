@@ -93,9 +93,9 @@ In addition of the [very good exercises](https://github.com/tfpk/macrokata/tree/
     - `<name>`: name of the metavariable, 
 	  
     - `<fragspec>`: "Fragment Specifier", what sort of fragment you intend to match. 
-	      - `literal`: 'a', 3, "hello"
-	      - `expr`: for expression
-	      - `stmt`: ≈ `expr` but allow Rust statements too (f.i. `let`)
+      - `literal`: 'a', 3, "hello"
+      - `expr`: for expression
+      - `stmt`: ≈ `expr` but allow Rust statements too (f.i. `let`)
 	 
   	**Follow-set Ambiguity Rules**: which tokens are allowed to follow a metavariable:
 	   - For `literal`: anything can follow it.
