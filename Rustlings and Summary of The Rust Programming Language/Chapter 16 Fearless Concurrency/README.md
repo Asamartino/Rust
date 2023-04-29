@@ -1,9 +1,9 @@
 # Summary of chapter 16
 
-The Rust team discovered that ownership and type systems are a powerful set of tools to help manage memory safety and concurrency problems. By using them may concurrency errors become compile-time errors  fearless concurrency.
+The Rust team discovered that ownership and type systems are a powerful set of tools to help manage memory safety and concurrency problems. By using them may concurrency errors become compile-time errors -> fearless concurrency.
 
-**Threads**: provide a way to split a program into multiple independent tasks that can be executed concurrently, potentially speeding up the program execution but also adds complexity.
-Rust standard library only provides an implementation of 1:1 threading.
+**Threads**: provide a way to split a program into multiple independent tasks that can be executed concurrently, potentially speeding up the program execution but also adds complexity.\
+Rust standard library only provides an implementation of 1:1 threading ->many concurrency solutions are implemented as crates -> search online for the current state of the art.
 - To create a new thread:
     ```rust
     use std::thread;
@@ -106,4 +106,14 @@ Rust standard library only provides an implementation of 1:1 threading.
 - _Mutex\<T\>_ is a smart pointer. _lock()_ returns a smart pointer called _MutexGuard_.
   - Implements _Deref_ and _Drop_ (release the lock automatically when goes out of scope).
   - Comes with the risk of creating deadlocks
+    
+&nbsp;
+&nbsp;
+
+Extensible concurrency with _Sync_ and _Send_ Traits:
+- _Send_ trait: indicates that ownership of the type implementing _Send_ can be transferred between threads.
+- _Sync_ trait: indicates that it is safe for the type implementing _Sync_ to be referenced from multipele threads. In other words, any type _T_ is _Sync_ if _&T_ (is _Send_, -> the reference can be sent safely to another thread)
+
+  **Types that are made up of _Send_ and _Sync_ traits are automatically also _Send_ and _Sync_, we don’t have to implement those traits manually** -> building new concurrent types not made up of _Send_ and _Sync_ parts requires careful thought to uphold the safety guarantees. 
+
 
