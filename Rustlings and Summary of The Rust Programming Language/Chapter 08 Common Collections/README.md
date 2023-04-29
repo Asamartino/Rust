@@ -20,7 +20,20 @@ Collections (contains multiple values)  = **pointers with data stored on the hea
     - **capacity:** total number of elements it can hold without reallocating. 
     - **length**: actual number of elements.
     - If _vec.len()_ > _vec.capacity()_  -> capacity will automatically ↗, but elements will be reallocated -> slow -> _use Vec::with_capacity_ whenever possible to specify how big the vector is expected to get.
-    - **Can only store values of the same type**. **Work around**: define an enum with different value types and store them it into a vector (pg. 134)
+    - **Can only store values of the same type**. **Work around**: define an enum with different value types and store them it into a vector f.i.
+      ``` rust
+      enum SelectedTypes {
+        Int(i32),
+        Float(f64),
+        Text(String),
+      }
+      
+      let row = vec![
+            SelectedTypes::Int(3),
+            SelectedTypes::Text(String::from("blue")),
+            SelectedTypes::Float(10.12),
+      ];
+      ```
 
 - _String_ (wrapper over a _Vec\<u8\>_)
     - ``` “abc”.to_string() = String::from(“abc”)```
