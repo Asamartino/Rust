@@ -51,7 +51,7 @@ enum Option<T>{
     }
     ```
 
-    - trade-off: loose exhaustive checking.
+    - trade-off: **loose exhaustive checking**
     - can also include an _else_
     ```rust
       let mut count = 0;
@@ -61,5 +61,21 @@ enum Option<T>{
           count += 1;
       }
     ```
-
+  It is also possible to mix and match `if let`, `else if` and `else if let` expressions e.g.:
+  ```rust
+  if let Some(color) = favorite_color {
+        println!("Using your favorite color, {color}, as the background");
+    } else if is_tuesday {
+        println!("Tuesday is green day!");
+    } else if let Ok(age) = age {
+        if age > 30 {
+            println!("Using purple as the background color");
+        } else {
+            println!("Using orange as the background color");
+        }
+    } else {
+        println!("Using blue as the background color");
+  }
+  ```
+      
 
