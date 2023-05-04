@@ -30,6 +30,17 @@ enum Option<T>{
         None => println!("No value"),
     }
     ```
+- can match multiple patterns using | (= or)
+- `..` allow you to match to an inclusive range of values or chars
+    ```rust
+     let x = 5;
+
+    match x {
+        1..=5 => println!("one through five"),
+        6 | 7 => println!("six or seven"),
+        _ => println!("something else"),
+    }
+    ```
 - Underscore:
     - _ _pattern_ will match any value. By putting after other arms _ will match all possible cases that aren’t specified before it. 
     - _s ignoring an unused variable.
