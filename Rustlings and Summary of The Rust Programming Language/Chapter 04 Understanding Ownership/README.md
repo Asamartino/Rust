@@ -4,7 +4,7 @@ All programs **manage** the way they use a **computer’s memory** while running
 **Ownership rules**:
 -	Each value in Rust has a variable called its owner.
 -	There can only be one owner at a time.
--	When the owner goes out of scope, the value will be dropped. Rust calls drop automatically at }
+-	When the owner goes out of scope, the value will be dropped. Rust calls drop automatically when the owner goes out of scope
 
 
 **String**: (stored on the heap) made up of three parts: a pointer, a length, and a capacity.
