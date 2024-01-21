@@ -115,7 +115,7 @@ In addition of the [very good exercises](https://github.com/tfpk/macrokata/tree/
     ```rust
     #[macro_export]
     macro_rules! and_text {
-    	($(the $my_literal:literal)and+) => { // and is a separator could also use , it’s optional
+    	($(the $my_literal:literal)and+) => {
 	            {
 	                let mut my_vec = Vec::new();
 	                $(my_vec.push($my_literal);)*
