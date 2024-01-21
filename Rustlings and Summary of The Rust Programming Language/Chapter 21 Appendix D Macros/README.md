@@ -123,6 +123,17 @@ In addition of the [very good exercises](https://github.com/tfpk/macrokata/tree/
             }
         }
     }
+
+    #[macro_export]
+    macro_rules! and_text {
+    ($(the $my_literal:literal $(and)*)+) => { 
+            {
+                let mut my_vec = Vec::new();
+                $(my_vec.push($my_literal);)*
+                my_vec
+            }
+        }
+    }
     ...
     and_text!(the "lion" and the "witch" and the "wardrobe");
     ```
