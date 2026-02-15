@@ -1,30 +1,61 @@
 # Summary of Chapter 3
 
 **Rust**:
-- **statically typed language**: variable types must be known at compile time
-- **Expression based language** -> everything in Rust is an expression.
-	- expression: evaluate to a resulting value
+- **statically typed language**: compiler must know every variable's type before the program runs. So either you annotate it explicitly or the compiler infers it
+```rust
+let x: u32 = 5;     // you tell the compiler
+let y = 5;           // compiler infers i32
+let z = "hello";     // compiler infers &str
+```
+- **Expression based language** -> everything in Rust is an expression. 
+	- Every expression produces something. **You can always put it on the right side of an = because it gives back a value**.
 		- calling a function, calling a macro, the block {…}, math expression, a value e.g. 5, if statement, etc.
-		- do not include ending semicolons -> adding one turns it into a statement.
+		```rust
+		let x = 5;          // 5 is an expression, it produces → 5
+		let x = 5 + 3;      // 5 + 3 is an expression, it produces → 8
+
+		fn add(a: i32, b: i32) -> i32 {
+			a + b
+		}
+		let x = add(2, 3);  // add(2, 3) is an expression, it produces → 5
+
+		let x = {
+			let a = 10;
+			let b = 20;
+			a + b          // no semicolon! last expression is the value,
+		};
+		// the whole block is an expression, it produces → 30
+		```
 	- statement: perform some action and do not return a value.
 		- creating and assigning a value to a variable with let, function definition, etc.
-	- **snake case**: for function and variable names, i.e. lowercase letter and underscores separated words.
-	- by default, variables are immutable -> the rust compiler guarantees it :)
+		```rust
+		let x = 5;             // stores 5 in x, but "let x = 5" itself produces nothing
+		let y = (let x = 5);   // ❌ error — nothing to assign to y (proof that it produces nothing)
 
-**Constant**: always annotate type:
+		fn greet() {            // defines a function, produces nothing
+			println!("hi");
+		}		
+		```
+
+
+
+	- **snake case**: for function and variable names, i.e. lowercase letter and underscores separated words.
+	- by default, **variables are immutable** -> the rust compiler guarantees it :)
+
+**Constant**: you must explicitly specify the type:
 ```rust
 const MAX_points: u32 = 100_000;
 ```
 
-**Shadowing**: by using _let_ and same variable name -> perform a few transformations or even change the type -> variable will be immutable after those transformations are completed.
+**Shadowing**:  you can declare a new variable with the same name as a previous one. This new declaration *shadows* (hides) the old one. Can perform a few transformations or even change the type -> variable will be immutable after those transformations are completed.
 ```rust
 let x = 5.
-let x = x + 1;
+let x = x + 1;                  // x is now 6, old x is gone
 
-let spaces = "   ";
-let spaces = spaces.len();
+let spaces = "   ";            // &str
+let spaces = spaces.len();     // now it's usize —> totally different type
 ```
-**Char**: specified with single quote (string uses double quote). Represents Unicode Scalar Value -> more than just ASCII (emoji, hiragana, etc..).
+**Char**: specified with single quote (string uses double quote). Rust's char is 4 bytes and represents a full Unicode scalar value. Unicode is basically a giant list where every character in the world gets a unique number (contains emoji, hiragana, etc..)
 
 **Compound type**: to group multiple values into one type.
 - Tuple: general way of grouping together different values into one compound type:
@@ -52,7 +83,7 @@ let second = a[1];
 - _main()_: lines execute in the order in which they appear
 
 **If expression**: 
-- bool as condition (no automatic conversion)
+- condition must be a bool (no automatic conversion)
 - Multiple conditions with _else if_: 
 	- only executes the block for the first true condition -> doesn’t even check the rest 
 ```rust
@@ -72,18 +103,34 @@ if number % 4 == 0 {
 - both arms _if else_ must return the same type
 
 **Loop**:
+There are 3 types of loop in Rust:
 - _loop_: executed forever or until you stop it with _break_
 - _while_: concise combination of _loop_, _if_, _else_ and _break_
 - _for_: **used for safety and conciseness (most commonly used)**
 ```rust
 let a = [10, 20, 30, 40, 50];
 for element in a.iter() {    // increased safety and ↘ bugs
-    println!("the value is: {}", element);
+ println!("the value is: {}", element);
 }
+
+// Output:
+// the value is: 10
+// the value is: 20
+// the value is: 30
+// the value is: 40
+// the value is: 50
 
 for number in (1..4).rev() {
     println!("{}!", number);
 }
 println!("LIFTOFF!!!");
+
+// Output:
+// 3!
+// 2!
+// 1!
+// LIFTOFF!!!
+
+
  ```
 
