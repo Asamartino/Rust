@@ -7,8 +7,8 @@ let x: u32 = 5;     // you tell the compiler
 let y = 5;           // compiler infers i32
 let z = "hello";     // compiler infers &str
 ```
-- **Expression based language** -> everything in Rust is an expression. 
-	- Every expression produces something. **You can always put it on the right side of an = because it gives back a value**.
+- Rust is primarly an **expression based language**
+	- An expression produces something. **You can put it on the right side of an = because it gives back a value**.
 		- calling a function, calling a macro, the block {…}, math expression, a value e.g. 5, if statement, etc.
 		```rust
 		let x = 5;          // 5 is an expression, it produces → 5
