@@ -78,6 +78,7 @@ fn value_in_cents(coin: Coin) -> u32 {
     ```
 - _if let_:  handle values that match 1 pattern while ignoring the rest. It's a syntactic sugar for a match where you only care about one pattern and want to ignore everything else.
 <!-- **Be careful of implicit coercion** why?-->
+
     ```rust
     let some_u8_value = Some(0u8);
     if let Some(3) =  some_u8_value {
