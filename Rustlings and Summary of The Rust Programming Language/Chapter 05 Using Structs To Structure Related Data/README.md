@@ -40,23 +40,27 @@ struct User{
 
     println!("{}", user);    // ERROR — no Display
     println!("{:?}", user);  // User { name: "Alice", age: 30 }
-    println!("{:#?}", user); // same but pretty-printed (multi-line)
+    println!("{:#?}", user); // same as above but multi-line, i.e.
+                             //   User {
+                             //     name: "Alice",
+                             //     age: 30,
+                             //   }
     ```
 
 
 **Tuple struct**:  has fields but no names
 ```rust
-// Regular tuple — no name at all
+// Regular tuple: no name at all
 let color = (0, 0, 0);
 
-// Regular struct — has named fields
+// Regular struct: has named fields
 struct Color {
     red: i32,
     green: i32,
     blue: i32,
 }
 
-// Tuple struct — has fields but NO names, just positions
+// Tuple struct: has fields but NO names, just positions
 struct Color (i32,i32,i32);
 struct Point(i32, i32, i32);
 
